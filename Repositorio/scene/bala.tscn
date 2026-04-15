@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://4fqicxycklby"]
+
+[ext_resource type="Texture2D" uid="uid://b22fev65xah6p" path="res://assets/All_Fire_Bullet_Pixel_16x16_07.png" id="1_ywahg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui3sr"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(416, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oig0l"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(432, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83twe"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(448, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kctcf"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(464, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_168o5"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(608, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8igb"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(624, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksf8f"]
+atlas = ExtResource("1_ywahg")
+region = Rect2(592, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qry23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui3sr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oig0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83twe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kctcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_168o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8igb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksf8f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ph5n6"]
+radius = 12.165525
+
+[node name="Bala" type="Area2D" unique_id=1115064295]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062385315]
+position = Vector2(4.7683716e-07, 1.1920929e-07)
+scale = Vector2(2.46875, 2.1875)
+sprite_frames = SubResource("SpriteFrames_qry23")
+autoplay = "default"
+frame_progress = 0.18908936
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=889735177]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_ph5n6")
