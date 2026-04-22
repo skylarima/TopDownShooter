@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c1ypavbtw8not" path="res://scripts/jogador.gd" id="1_mnetb"]
 [ext_resource type="PackedScene" uid="uid://4fqicxycklby" path="res://scene/bala.tscn" id="2_ad57j"]
 [ext_resource type="Texture2D" uid="uid://by42qipya0ihq" path="res://assets/desenhomj.png" id="2_mnetb"]
+[ext_resource type="AudioStream" uid="uid://cmpy4jflukr01" path="res://assets/som da bala mj ogg.ogg" id="4_mrtcd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2wt1"]
 size = Vector2(112, 104)
@@ -21,5 +22,9 @@ position = Vector2(8, 15.999997)
 scale = Vector2(3.35, 3.4199998)
 texture = ExtResource("2_mnetb")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1117972174]
-position = Vector2(99.99999, 19.999998)
+[node name="mira" type="Marker2D" parent="." unique_id=1117972174]
+position = Vector2(99.28572, 20)
+
+[node name="efeitotiro" type="AudioStreamPlayer2D" parent="." unique_id=160800429]
+stream = ExtResource("4_mrtcd")
+volume_db = 3.888
