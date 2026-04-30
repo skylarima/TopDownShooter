@@ -12,7 +12,19 @@ config_version=5
 
 config/name="TopDownShooter"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://scene/": "red",
+"res://scripts/": "red"
+}
+
+[global_group]
+
+Inimigos=""
 
 [input]
 

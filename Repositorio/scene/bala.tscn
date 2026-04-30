@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4fqicxycklby"]
 
-[ext_resource type="Script" uid="uid://dmpop1ockgdkt" path="res://scene/bala.gd" id="1_ui3sr"]
+[ext_resource type="Script" uid="uid://dmpop1ockgdkt" path="res://scripts/bala.gd" id="1_ui3sr"]
 [ext_resource type="Texture2D" uid="uid://b22fev65xah6p" path="res://assets/All_Fire_Bullet_Pixel_16x16_07.png" id="1_ywahg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ui3sr"]
@@ -63,7 +63,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ph5n6"]
 radius = 12.165525
 
-[node name="Bala" type="Area2D" unique_id=1115064295]
+[node name="Bala" type="Area2D" unique_id=1115064295 groups=["Inimigos"]]
 script = ExtResource("1_ui3sr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062385315]
@@ -76,3 +76,5 @@ frame_progress = 0.18908936
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=889735177]
 position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_ph5n6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
