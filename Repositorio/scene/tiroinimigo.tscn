@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://pvfgyqtr2bne"]
+
+[ext_resource type="Texture2D" uid="uid://deew5rfkvqnf" path="res://assets/laser gun projectile animation.png" id="1_75m4w"]
+[ext_resource type="Script" uid="uid://ddall1yefqvfj" path="res://scene/tiroinimigo.gd" id="1_dcn11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cymnw"]
+atlas = ExtResource("1_75m4w")
+region = Rect2(0, 0, 1730, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w84bp"]
+atlas = ExtResource("1_75m4w")
+region = Rect2(1730, 0, 1730, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqa0v"]
+atlas = ExtResource("1_75m4w")
+region = Rect2(3460, 0, 1730, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34bvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cymnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w84bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqa0v")
+}],
+"loop": true,
+"name": &"tiro",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ew06"]
+size = Vector2(99, 36)
+
+[node name="tiroinimigo" type="Area2D" unique_id=1395483846]
+script = ExtResource("1_dcn11")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1968767573]
+position = Vector2(9.000008, 4)
+scale = Vector2(0.057803474, 0.14259258)
+sprite_frames = SubResource("SpriteFrames_34bvp")
+animation = &"tiro"
+frame_progress = 0.67918617
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=7273548]
+position = Vector2(9.5, 4)
+shape = SubResource("RectangleShape2D_2ew06")

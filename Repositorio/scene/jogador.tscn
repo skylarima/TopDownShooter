@@ -9,7 +9,6 @@
 size = Vector2(112, 104)
 
 [node name="jogador" type="CharacterBody2D" unique_id=1544670993]
-scale = Vector2(1.4, 1.4)
 script = ExtResource("1_mnetb")
 projetil = ExtResource("2_ad57j")
 

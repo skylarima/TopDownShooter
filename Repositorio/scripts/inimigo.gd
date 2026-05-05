@@ -4,6 +4,9 @@ extends CharacterBody2D
 
 @onready var jogador = %jogador
 
+@export var projetilini: PackedScene
+
+@onready var ponta_arma = $mirainimigo
 
 func _physics_process(delta: float) -> void:
 	
@@ -20,3 +23,17 @@ func mover():
 func tomar_dano():
 	
 	self.queue_free()
+
+func disparar():
+	var nova_bala = projetilini.instantiate()
+	nova_bala.global_position = ponta_arma.global_position
+	
+	nova_bala.direcao = (jogador.global_position - self.global_position).normalized()
+	
+	nova_bala.look_at(jogador.global_position)
+	
+	get_tree().current_scene.add_child(nova_bala)
+
+
+func _on_timer_timeout() -> void:
+	disparar () # Replace with function body.
