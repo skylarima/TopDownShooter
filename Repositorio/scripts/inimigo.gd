@@ -8,15 +8,18 @@ extends CharacterBody2D
 
 @onready var ponta_arma = $mirainimigo
 
+var direcao_jogador = Vector2.ZERO
+
 func _physics_process(delta: float) -> void:
 	
 	if %jogador:
 		mover()
+		virar() 
 	
 	move_and_slide()
 	
 func mover():
-	var direcao_jogador = (jogador.global_position - self.global_position).normalized()
+	direcao_jogador = (jogador.global_position - self.global_position).normalized()
 	
 	velocity = SPEED * direcao_jogador 
 	
@@ -37,3 +40,16 @@ func disparar():
 
 func _on_timer_timeout() -> void:
 	disparar () # Replace with function body.
+
+func virar(): 
+	if direcao_jogador.x>0: 
+		$spritecorpo.flip_h= false
+		$spritearma.flip_h= false
+		$spritearma.position= Vector2(246,4)
+		$mirainimigo.position= Vector2(368,0)
+	elif direcao_jogador.x <0:
+		$spritecorpo.flip_h= true
+		$spritearma.flip_h= true
+		$spritearma.position= Vector2(-246,4)
+		$mirainimigo.position= Vector2(-368,0)
+		

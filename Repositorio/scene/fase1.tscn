@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://31d71v4iaxjd" path="res://scene/inimigo.tscn" id="2_p8fin"]
 
 [node name="Node2D" type="Node2D" unique_id=1045806162]
+position = Vector2(-1, 0)
 
 [node name="jogador" parent="." unique_id=1544670993 instance=ExtResource("1_0jqxn")]
 unique_name_in_owner = true

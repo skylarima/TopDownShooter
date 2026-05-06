@@ -10,6 +10,42 @@
 [ext_resource type="Texture2D" uid="uid://b8erkafvn285y" path="res://assets/Robot Death.png" id="7_uxnv7"]
 [ext_resource type="Texture2D" uid="uid://bncuodgt72fye" path="res://assets/laser gun animation.png" id="8_37pwa"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5xkr"]
+atlas = ExtResource("8_37pwa")
+region = Rect2(0, 0, 290, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi7xy"]
+atlas = ExtResource("8_37pwa")
+region = Rect2(290, 0, 290, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebilm"]
+atlas = ExtResource("8_37pwa")
+region = Rect2(580, 0, 290, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbjfa"]
+atlas = ExtResource("8_37pwa")
+region = Rect2(870, 0, 290, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpmes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5xkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi7xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebilm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbjfa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_iiuum"]
 atlas = ExtResource("2_qq1om")
 region = Rect2(0, 0, 1000, 1000)
@@ -323,42 +359,6 @@ animations = [{
 "speed": 13.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5xkr"]
-atlas = ExtResource("8_37pwa")
-region = Rect2(0, 0, 290, 140)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pi7xy"]
-atlas = ExtResource("8_37pwa")
-region = Rect2(290, 0, 290, 140)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebilm"]
-atlas = ExtResource("8_37pwa")
-region = Rect2(580, 0, 290, 140)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbjfa"]
-atlas = ExtResource("8_37pwa")
-region = Rect2(870, 0, 290, 140)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mpmes"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5xkr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pi7xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebilm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbjfa")
-}],
-"loop": false,
-"name": &"default",
-"speed": 8.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enrbn"]
 size = Vector2(147.50005, 597.5001)
 
@@ -367,20 +367,20 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_0b8xr")
 projetilini = ExtResource("2_8tn5b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=224709905]
+[node name="spritearma" type="AnimatedSprite2D" parent="." unique_id=339871186]
+z_index = -1
+position = Vector2(246, 4)
+sprite_frames = SubResource("SpriteFrames_mpmes")
+frame = 3
+frame_progress = 1.0
+
+[node name="spritecorpo" type="AnimatedSprite2D" parent="." unique_id=224709905]
 sprite_frames = SubResource("SpriteFrames_v5nbb")
 animation = &"atirando"
 frame = 4
 frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=801527173]
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=339871186]
-z_index = -1
-position = Vector2(246, 4)
-sprite_frames = SubResource("SpriteFrames_mpmes")
-frame = 3
-frame_progress = 1.0
 
 [node name="mirainimigo" type="Marker2D" parent="." unique_id=1243027211]
 position = Vector2(368, 0)
