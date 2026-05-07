@@ -369,12 +369,19 @@ projetilini = ExtResource("2_8tn5b")
 
 [node name="spritearma" type="AnimatedSprite2D" parent="." unique_id=339871186]
 z_index = -1
+texture_repeat = 2
 position = Vector2(246, 4)
 sprite_frames = SubResource("SpriteFrames_mpmes")
 frame = 3
 frame_progress = 1.0
 
 [node name="spritecorpo" type="AnimatedSprite2D" parent="." unique_id=224709905]
+sprite_frames = SubResource("SpriteFrames_v5nbb")
+animation = &"atirando"
+frame = 4
+frame_progress = 1.0
+
+[node name="spritecorpo2" type="AnimatedSprite2D" parent="." unique_id=1836433848]
 sprite_frames = SubResource("SpriteFrames_v5nbb")
 animation = &"atirando"
 frame = 4
